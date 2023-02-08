@@ -1,4 +1,4 @@
-import Engine from "./utils/engine.js";
+import Engine from "./src/Engine/index.js";
 
 const eng = new Engine("canvas", {
   antialias: "None",
@@ -15,6 +15,6 @@ eng.render.fillTriangle(
   [0, 1, 0, 1],
   [0, 0, 1, 1]
 );
-eng.render.drawCube(30, 30, 30, [1, 0, 0, 1]);
+//eng.render.drawCube(30, 30, 30, [1, 0, 0, 1]);
 //eng.render.drawLine([0, 0, 0], [-100, 50, 0]);
 eng.processBuffer();

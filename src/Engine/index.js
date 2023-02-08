@@ -1,4 +1,4 @@
-import Render from "./render";
+import Render from "../Render/index";
 
 class Engine {
   constructor(canvasIdName, options) {

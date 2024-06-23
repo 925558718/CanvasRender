@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vite App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .home {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .left {
+            display: flex;
+            background: grey;
+            flex: 1 0 300px;
+        }
+
+
+        .right {
+            display: flex;
+            flex-basis: 300px;
+            background: grey;
+        }
+
+        .btn {
+            margin: 50px;
+            line-height: 50px;
+            width: 100px;
+            height: 50px;
+            border-radius: 10px;
+            background: #0074D9;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+<div class="home">
+    <div class="list left">
+        <div class="btn antialias">反走样</div>
+        <div class="btn light">光照</div>
+        <div class="btn model">纹理采样</div>
+        <div class="btn shadow">阴影</div>
+    </div>
+    <canvas id="canvas" height="600" width="600" style="background: black;transform: rotate(180deg)"></canvas>
+    <div class="list right" id="right">
+        <div id="antialias-list" style="display: none">
+            <div class="btn" id="mass">mass</div>
+            <div class="btn" id="ssaa">ssaa</div>
+            <div class="btn" id="taa">taa</div>
+        </div>
+        <div id="model-list" style="display: none">
+            <div class="btn" id="rabbit">mass</div>
+            <div class="btn" id="crate">ssaa</div>
+            <div class="btn" id="cow">taa</div>
+        </div>
+        <div id="light-list" style="display: none">
+            <div class="btn" id="blinn-phong">mass</div>
+            <div class="btn" id="phong">ssaa</div>
+        </div>
+        <div id="shadow-list" style="display: none">
+            <div class="btn" id="shadow-map">mass</div>
+            <div class="btn" id="pcf">ssaa</div>
+            <div class="btn" id="pcss">taa</div>
+        </div>
+    </div>
+</div>
+<canvas id="readImg" style="display: none"></canvas>
+<canvas id="gray" style="display: none"></canvas>
+<script type="module" src="/main.js"></script>
+</body>
+</html>

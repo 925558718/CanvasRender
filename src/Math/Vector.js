@@ -1,4 +1,4 @@
-import {Matrix} from "./Matrix.js";
+import { Matrix } from "./Matrix.js";
 
 export class Vector {
     constructor(x = 0, y = 0, z = 0, w = 0) {
@@ -10,8 +10,8 @@ export class Vector {
     }
 
     dot(v) {
-        const {x: vx, y: vy, z: vz, w: vw} = v;
-        const {x, y, z, w} = this;
+        const { x: vx, y: vy, z: vz, w: vw } = v;
+        const { x, y, z, w } = this;
         return vx * x + vy * y + vz * z;
     }
 
@@ -20,7 +20,7 @@ export class Vector {
     }
 
     cross(v) {
-        const {x: a1, y: a2, z: a3, w: a4} = this;
+        const { x: a1, y: a2, z: a3, w: a4 } = this;
         let m = new Matrix([
             0,
             -a3,
@@ -43,7 +43,7 @@ export class Vector {
     }
 
     multiply(m) {
-        if(m instanceof Matrix) {
+        if (m instanceof Matrix) {
             let res = [];
             for (let i = 0; i < m.nrow; i++) {
                 let sum =
@@ -54,9 +54,14 @@ export class Vector {
                 res.push(sum);
             }
             return new Vector(...res);
-        }else if(m instanceof Vector) {
-            return new Vector(this.x * m.x,this.y * m.y,this.z * m.z,this.w * m.w);
-        }else {
+        } else if (m instanceof Vector) {
+            return new Vector(
+                this.x * m.x,
+                this.y * m.y,
+                this.z * m.z,
+                this.w * m.w
+            );
+        } else {
             return new Vector(this.x * m, this.y * m, this.z * m, this.w * m);
         }
     }
@@ -76,7 +81,7 @@ export class Vector {
     normalize() {
         this.w = 1;
         let len = this.len();
-        if(len===0) return new Vector(0,0,0)
+        if (len === 0) return new Vector(0, 0, 0);
         return this.multiplyScalar(1 / len);
     }
 

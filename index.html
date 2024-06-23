@@ -53,34 +53,7 @@
 </head>
 <body>
 <div class="home">
-    <div class="list left">
-        <div class="btn antialias">反走样</div>
-        <div class="btn light">光照</div>
-        <div class="btn model">纹理采样</div>
-        <div class="btn shadow">阴影</div>
-    </div>
     <canvas id="canvas" height="600" width="600" style="background: black;transform: rotate(180deg)"></canvas>
-    <div class="list right" id="right">
-        <div id="antialias-list" style="display: none">
-            <div class="btn" id="mass">mass</div>
-            <div class="btn" id="ssaa">ssaa</div>
-            <div class="btn" id="taa">taa</div>
-        </div>
-        <div id="model-list" style="display: none">
-            <div class="btn" id="rabbit">mass</div>
-            <div class="btn" id="crate">ssaa</div>
-            <div class="btn" id="cow">taa</div>
-        </div>
-        <div id="light-list" style="display: none">
-            <div class="btn" id="blinn-phong">mass</div>
-            <div class="btn" id="phong">ssaa</div>
-        </div>
-        <div id="shadow-list" style="display: none">
-            <div class="btn" id="shadow-map">mass</div>
-            <div class="btn" id="pcf">ssaa</div>
-            <div class="btn" id="pcss">taa</div>
-        </div>
-    </div>
 </div>
 <canvas id="readImg" style="display: none"></canvas>
 <canvas id="gray" style="display: none"></canvas>

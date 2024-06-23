@@ -34,19 +34,15 @@ async function initScene(options) {
 
     cube1.rotate(-150, "y");
     cube1.translate(0, 0.58);
-    cube1.scale(1.5, 1.5, 1.5);
 
     scene.add(cube1);
     setTimeout(() => {
         console.time();
+        eng.clear()
+        cube1.rotate(-150, "y");
         eng.renderTrick(scene, options);
         console.timeEnd();
     }, 100);
 }
 
 initScene(options);
-
-document.getElementById("antialias-list").style.display = "block";
-document.getElementById("right").addEventListener("click", () => {
-    initScene({ a: 1 });
-});

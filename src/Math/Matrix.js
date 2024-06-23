@@ -58,7 +58,7 @@ export class Matrix {
         for (let p = 0; p < this.ncol; p++) {
           sum += m.find(p, k) * this.find(j, p);
         }
-        res.push(sum);
+        res.push(+sum.toFixed(8));
       }
     }
     return new Matrix(res);
